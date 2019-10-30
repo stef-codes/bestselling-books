@@ -1,8 +1,13 @@
-# require "bestselling_books/version"
+#environment_file
 
-# module BestsellingBooks
-#   class Error < StandardError; end
-#   # Your code goes here...
-# end
+require 'pry'
+require 'nokogiri'
+require 'open-uri'
+
+require_relative "./bestselling_books/version"
+require_relative "./bestselling_books/scraper"
+require_relative "./bestselling_books/cli"
+require_relative "./bestselling_books/book"
+
 
 puts "Hello World!"
