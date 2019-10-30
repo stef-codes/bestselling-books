@@ -7,7 +7,7 @@ class CLI
         puts '------------------------------------------------'
         puts ' '
 
-        html = open("https://www.imdb.com/")
+        html = open("https://www.amazon.com/gp/bestsellers/2019/books")
         doc = Nokogiri::HTML(html)
          binding.pry
     end 
