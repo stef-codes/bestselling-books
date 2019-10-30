@@ -1,7 +1,7 @@
-#!(lookup)
+#!/usr/bin/env ruby
 
+# this is also called the run file
 # calls the require relative file
 require_relative "../lib/bestselling_books"
 
-# run 
-#test
+ run 

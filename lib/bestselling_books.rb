@@ -1,5 +1,3 @@
-#environment_file
-
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
