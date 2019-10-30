@@ -1,7 +1,7 @@
-class Scraper 
+# class Scraper 
 
-    def self.scraper 
+#     def self.scraper 
     
-    end
+#     end
 
-end 
+# end 
