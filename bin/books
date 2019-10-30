@@ -2,6 +2,6 @@
 
 # this is also called the run file
 # calls the require relative file
-require_relative "../lib/bestselling_books"
+require_relative "../lib/bestselling_books.rb"
 
  CLI.new.run 
