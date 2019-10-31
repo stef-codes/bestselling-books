@@ -26,9 +26,17 @@ class Scraper
     end 
 
     def self.scrape_book_details(book)
-         html = open("https://www.goodreads.com#{book.url}")
-         doc = Nokogiri::HTML(html)
+        html = open("https://www.goodreads.com#{book.url}")
+        doc = Nokogiri::HTML(html)
          binding.pry
+        doc.each do |livre|
+        book = Book.new 
+        book.author = livre.css("a.authorName")[0].text
+        book.description = livre.css("#description span")[0].children[-1].text
+        book.rating = livre.at("//span[@itemprop = 'ratingValue']").text.strip
+        # binding.pry
+     # I used at("//span[@itemprop = 'addressLocality']"
+        end
     end 
 end
 

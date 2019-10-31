@@ -29,5 +29,9 @@ class CLI
        Book.all.each_with_index do |book, index| 
         puts "#{index+ 1}. #{book.name}" 
         end
-    end     
+    end  
+    
+    def print_book_details
+        
+    end 
 end
