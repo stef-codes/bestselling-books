@@ -1,7 +1,7 @@
 class CLI
     def run
         puts "Read these books at your next Book Club!"
-        puts "These are the Top 10 books:"
+        puts "These are the Top 100 books:"
         puts " "
         puts '------------------------------------------------'
         puts ' '

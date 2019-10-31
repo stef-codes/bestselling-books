@@ -14,11 +14,13 @@ class Scraper
         doc = Nokogiri::HTML(html)
         # base = "https://www.goodreads.com"
         # book = Book.new(name,url)
-
+        
+       
         doc.css("table tr").each do |book|  
             name = book.css("a span").children[0].text 
             url = book.css("a").attribute("href").value
             book = Book.new(name, url)
+            
         end 
     end 
 end
