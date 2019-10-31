@@ -10,7 +10,7 @@ class CLI
         #  binding.pry
         puts " "
 #loop that ask user what to do and does it over until exit 
-        puts "Select a number to see more details about the books for your book club 
+        puts "Select a number to see more details about the books for your Book Club 
         or type 'exit' to exit"
          input = gets.strip
          while input.downcase != "exit" do 
@@ -45,7 +45,12 @@ class CLI
     end  
     
     def print_book_details(book)
-        puts "I am a book!"
-        puts "author: #{book.author}"
+        puts "Your Book Club will Love This Choice!"
+        puts "You chose: #{book.name}"
+        puts "It was written by #{book.author}"
+        puts "It has a wonderful rating of #{book.rating}"
+        puts "Here's a brief description below:"
+        puts "#{book.description}"
+        puts "What do you think?"
     end 
 end
