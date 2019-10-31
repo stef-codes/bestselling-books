@@ -13,17 +13,30 @@ class CLI
         puts "Select a number to see more details about the books for your book club 
         or type 'exit' to exit"
          input = gets.strip
-         while input != "exit".downcase do 
-             book = Book.all[input.to_i - 1]
-             Scraper.scrape_book_details(book)
+         while input.downcase != "exit" do 
+            if input.to_i <= 100 && input.to_i > 0
+                book = Book.all[input.to_i - 1]
+                # binding.pry
+                Scraper.scrape_book_details(book) if !book.author 
+                
+                print_book_details(book)
+            elsif input.downcase == "list"
+                print_books
+            else 
+                puts " "
+                puts "I don't understand"
+            end
+            puts "Please input a book number, type 'list', or type 'exit'"
+            input = gets.strip
          end    
-        menu 
-        print_books
+        # menu 
+        # print_books
+
     end
      
-    def menu 
+    # def menu 
 
-    end 
+    # end 
 
     def print_books     
        Book.all.each_with_index do |book, index| 
@@ -31,7 +44,8 @@ class CLI
         end
     end  
     
-    def print_book_details
-        
+    def print_book_details(book)
+        puts "I am a book!"
+        puts "author: #{book.author}"
     end 
 end
