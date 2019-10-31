@@ -9,9 +9,14 @@ class CLI
         print_books
         #  binding.pry
         puts " "
+#loop that ask user what to do and does it over until exit 
         puts "Select a number to see more details about the books for your book club 
         or type 'exit' to exit"
-#loop that ask user what to do and does it over until exit 
+         input = gets.strip
+         while input != "exit".downcase do 
+             book = Book.all[input.to_i - 1]
+             Scraper.scrape_book_details(book)
+         end    
         menu 
         print_books
     end

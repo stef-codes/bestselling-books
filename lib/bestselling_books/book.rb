@@ -3,10 +3,11 @@ class Book
 
     @@all = []
 
-    def initialize (name,url)
+     
+    def initialize
+    # @name = name
+    # @url = url
     @@all << self 
-    @name = name
-    @url = url
     end 
 
     def self.all 
