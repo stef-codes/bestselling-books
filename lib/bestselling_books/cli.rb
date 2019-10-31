@@ -1,7 +1,7 @@
 class CLI
     def run
-        puts "Read these books at your next Book Club!"
-        puts "These are the Top 100 books:"
+        puts "Need a New Book for your Book Club?"
+        puts "Here are 100 books to choose from:"
         puts " "
         puts '------------------------------------------------'
         puts ' '
@@ -41,16 +41,17 @@ class CLI
     def print_books     
        Book.all.each_with_index do |book, index| 
         puts "#{index+ 1}. #{book.name}" 
+        sleep(0.15)
         end
     end  
     
     def print_book_details(book)
-        puts "Your Book Club will Love This Choice!"
-        puts "You chose: #{book.name}"
-        puts "It was written by #{book.author}"
-        puts "It has a wonderful rating of #{book.rating}"
-        puts "Here's a brief description below:"
-        puts "#{book.description}"
+        puts "Your Book Club will Love This Choice:"
+        puts "#{book.name.upcase}!"
+        puts "  Author: #{book.author}"
+        puts "  Rating: #{book.rating}"
+        puts "  Here's a brief description:"
+        puts "  #{book.description}"
         puts "What do you think?"
     end 
 end
