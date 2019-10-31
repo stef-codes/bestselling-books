@@ -1,13 +1,25 @@
 class CLI
     def run
-        puts "Check out the Bestselling Books of 2019 (so far)!"
+        puts "Read these books at your next Book Club!"
         puts "These are the Top 10 books:"
         puts " "
         puts '------------------------------------------------'
         puts ' '
-            binding.pry
-        html = open("https://www.goodreads.com/list/show/19.Best_for_Book_Clubs")
-        doc = Nokogiri::HTML(html)
-          binding.pry
+        Scraper.scrape_book_list
+        # binding.pry
+    
+#loop that ask user what to do and does it over until exit 
+        menu 
+        print_books
+    end
+     
+    def menu 
+
     end 
+
+    def print_books     
+       Book.all.each_with_index do |book, index| 
+        puts "#{index+ 1}. #{book.name}" 
+        end
+    end     
 end
