@@ -14,6 +14,7 @@ class Scraper
         doc = Nokogiri::HTML(html)
         # base = "https://www.goodreads.com"
         # book = Book.new(name,url)
+
         doc.css("table tr").each do |book|  
             name = book.css("a span").children[0].text 
             url = book.css("a").attribute("href").value
@@ -24,8 +25,9 @@ end
     # Method #2 if someone want to see the details on a given book this method takes in the object that is a book that only knows title and url
     #     open and nokogiri on https://www.goodreads.com +  that book's url
     #def scrape_book_details(book)
-
-    
+        # html = open("https://www.goodreads.com#{book.url}")
+        # doc = Nokogiri::HTML(html)
+        # # binding.pry
 
 
 

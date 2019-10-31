@@ -6,8 +6,11 @@ class CLI
         puts '------------------------------------------------'
         puts ' '
         Scraper.scrape_book_list
-        # binding.pry
-    
+        print_books
+        #  binding.pry
+        puts " "
+        puts "Select a number to see more details about the books for your book club 
+        or type 'exit' to exit"
 #loop that ask user what to do and does it over until exit 
         menu 
         print_books
