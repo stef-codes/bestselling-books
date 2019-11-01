@@ -2,7 +2,7 @@ class CLI
     def run
         puts ""
         puts "Need a New Book for your Book Club?"
-        sleep(1)
+        # sleep(1)
         puts " "
         puts '------------------------------------------------'
         puts "Here are 100 books to choose from:"            
@@ -55,14 +55,14 @@ class CLI
     def print_top_books    
        Book.all[0,10].each_with_index do |book, index| 
         puts "#{index+ 1}. #{book.name}" 
-        sleep(0.15)
+        # sleep(0.15)
         end
     end  
 
     def print_books     
         Book.all.each_with_index do |book, index| 
          puts "#{index+ 1}. #{book.name}" 
-         sleep(0.15)
+        #  sleep(0.15)
          end
      end
     

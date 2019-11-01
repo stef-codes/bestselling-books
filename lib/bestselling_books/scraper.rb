@@ -26,10 +26,17 @@ class Scraper
 
     def self.scrape_book_details(book)
         html = open("https://www.goodreads.com#{book.url}").read
+        # https://www.goodreads.com/book/show/4214.Life_of_Pi
         doc = Nokogiri::HTML(html)
-        doc.encoding = 'utf-8'
+        # doc.encoding = 'utf-8'
         book.author = doc.css("a.authorName")[0].text
-        book.description = doc.css("#description span")[1].text
+            binding.pry
+        if !doc.css("#description span")[1]
+            book.description = doc.css("#description span")[0].text
+        else 
+            book.description = doc.css("#description span")[1].text
+        end    
+        #  binding.pry
         book.rating = doc.at("//span[@itemprop = 'ratingValue']").text.strip
     end 
 
