@@ -1,17 +1,24 @@
 class CLI
     def run
+        puts ""
         puts "Need a New Book for your Book Club?"
-        puts "Here are 100 books to choose from:"
+        sleep(1)
         puts " "
         puts '------------------------------------------------'
-        # puts ' '
+        puts "Here are 100 books to choose from:"            
+        puts '------------------------------------------------'
         Scraper.scrape_book_list
         print_books
         #  binding.pry
         puts " "
-#loop that ask user what to do and does it over until exit 
-        puts "Select a number to see more details about the books for your Book Club 
-        or type 'exit' to exit"
+        puts "What a great list!"
+        puts " "
+#loop that asks user what to do and does it over until exit 
+        puts "---------------Menu--------------"
+        puts "1. Select a number (1-100) to see more details about the books for your Book Club" 
+        puts "2. Type 'list' to view all of the books again"
+        puts "3. Type 'exit' to leave the application"
+        puts "---------------------------------"
          input = gets.strip
          while input.downcase != "exit" do 
             if input.to_i <= 100 && input.to_i > 0
@@ -24,35 +31,52 @@ class CLI
                 print_books
             else 
                 puts " "
-                puts "I don't understand"
+                puts "Oops! Did you mean to type something else?"
             end
-            puts "Please input a book number, type 'list', or type 'exit'"
+            puts " "    
+            puts "Menu: Type a number (1-100) to see another book, type 'list', or type 'exit'"
             input = gets.strip
+
+            if input == exit 
+                puts "Hope you found a great book to share! Goodbye!"
+            end
          end    
         # menu 
         # print_books
-
+        # if input == exit 
+        #          puts "Hope you found a great book to share! Goodbye!"
+        # end  
     end
      
     # def menu 
 
     # end 
 
-    def print_books     
-       Book.all.each_with_index do |book, index| 
+    def print_top_books    
+       Book.all[0,10].each_with_index do |book, index| 
         puts "#{index+ 1}. #{book.name}" 
         sleep(0.15)
         end
     end  
+
+    def print_books     
+        Book.all.each_with_index do |book, index| 
+         puts "#{index+ 1}. #{book.name}" 
+         sleep(0.15)
+         end
+     end
     
     def print_book_details(book)
-        puts "Your Book Club will Love This Choice:"
+        puts ""
+        puts "Your Book Club will LOVE This Choice:"
         puts "#{book.name.upcase}!"
         puts "  Author: #{book.author}"
         puts "  Rating: #{book.rating}"
-        puts "  Here's a brief description:"
-        puts "  #{book.description}"
-        puts "What do you think?"
+        puts " "
+        puts "---------------Description--------------"
+        puts "#{book.description}"
+        puts " "
         puts "Learn more about the book here: https://www.goodreads.com#{book.url} "
+        puts " "
     end 
 end
