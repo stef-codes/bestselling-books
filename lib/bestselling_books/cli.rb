@@ -69,10 +69,11 @@ class CLI
     def print_book_details(book)
         puts ""
         puts "Your Book Club will LOVE This Choice:"
+        puts ""
         puts "#{book.name.upcase}!"
         puts "  Author: #{book.author}"
         puts "  Rating: #{book.rating}"
-        puts " "
+        # puts " "
         puts "---------------Description--------------"
         puts "#{book.description}"
         puts " "
