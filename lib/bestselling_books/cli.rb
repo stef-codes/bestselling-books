@@ -4,7 +4,7 @@ class CLI
         puts "Here are 100 books to choose from:"
         puts " "
         puts '------------------------------------------------'
-        puts ' '
+        # puts ' '
         Scraper.scrape_book_list
         print_books
         #  binding.pry
