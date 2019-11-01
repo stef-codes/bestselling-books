@@ -30,10 +30,19 @@ class Scraper
         book.author = doc.css("a.authorName")[0].text
         book.description = doc.at("#description span").next_sibling.next_sibling.css("br")[1].next_sibling.text
         # doc.css("#description span")[1].children[-1].text
-        #   binding.pry
+        # encoding_options = {
+        #     :invalid           => :replace,  # Replace invalid byte sequences
+        #     :undef             => :replace,  # Replace anything not defined in ASCII
+        #     :replace           => '',        # Use a blank for those replacements
+        #     :universal_newline => true       # Always break lines with \n
+        #   }  
+        #   x = doc.css("#description span")[1].children.text
+        #   x.encode(Encoding.find('ASCII'), encoding_options) 
+        # binding.pry
         book.rating = doc.at("//span[@itemprop = 'ratingValue']").text.strip
      # I used at("//span[@itemprop = 'addressLocality']"
      # Looks good: doc.css("#description span")[1].children.text.gsub!("â\u0080\u0099","'").gsub!("â\u0080\u0094","'")
+    # See String#encode documentation encoding_options = {   :invalid           => :replace,  # Replace invalid byte sequences   :undef             => :replace,  # Replace anything not defined in ASCII   :replace           => '',        # Use a blank for those replacements   :universal_newline => true       # Always break lines with \n } x.encode(Encoding.find('ASCII'), encoding_options) x = doc.css("#description span")[1].children.text
     end 
 end
 
