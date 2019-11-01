@@ -25,7 +25,6 @@ class Scraper
     end 
 
     def self.scrape_book_details(book)
-        #  puts "*******Scraping Book Details******"
         html = open("https://www.goodreads.com#{book.url}")
         doc = Nokogiri::HTML(html)
         book.author = doc.css("a.authorName")[0].text
