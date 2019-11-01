@@ -5,13 +5,11 @@ class Book
 
      
     def initialize
-    # @name = name
-    # @url = url
-    @@all << self 
+        @@all << self 
     end 
 
     def self.all 
-    @@all 
+        @@all 
     end 
 
 end 

@@ -2,14 +2,13 @@ class CLI
     def run
         puts ""
         puts "Need a New Book for your Book Club?"
-        # sleep(1)
+        sleep(1)
         puts " "
         puts '------------------------------------------------'
         puts "Here are 100 books to choose from:"            
         puts '------------------------------------------------'
         Scraper.scrape_book_list
         print_books
-        #  binding.pry
         puts " "
         puts "What a great list!"
         puts " "
@@ -23,9 +22,7 @@ class CLI
          while input.downcase != "exit" do 
             if input.to_i <= 100 && input.to_i > 0
                 book = Book.all[input.to_i - 1]
-                # binding.pry
                 Scraper.scrape_book_details(book) if !book.author 
-                
                 print_book_details(book)
             elsif input.downcase == "list"
                 print_books
@@ -36,36 +33,25 @@ class CLI
             puts " "    
             puts "Menu: Type a number (1-100) to see another book, type 'list', or type 'exit'"
             input = gets.strip
-
-            # if input == "exit" 
-            #     puts "Hope you found a great book to share! Goodbye!"
-            # end
          end    
-        # menu 
-        # print_books
-        # if input == exit 
         puts " "
         puts "Hope you found a great book to share! Goodbye!"
-        # end  
     end
-     
-    # def menu 
-
-    # end 
+      
 
     def print_top_books    
-       Book.all[0,10].each_with_index do |book, index| 
-        puts "#{index+ 1}. #{book.name}" 
-        # sleep(0.15)
+        Book.all[0,10].each_with_index do |book, index| 
+            puts "#{index+ 1}. #{book.name}" 
+            sleep(0.15)
         end
     end  
 
     def print_books     
         Book.all.each_with_index do |book, index| 
-         puts "#{index+ 1}. #{book.name}" 
-        #  sleep(0.15)
-         end
-     end
+            puts "#{index+ 1}. #{book.name}" 
+            sleep(0.15)
+        end
+    end
     
     def print_book_details(book)
         puts ""
@@ -75,7 +61,6 @@ class CLI
         sleep(0.3)
         puts "  Author: #{book.author.colorize(:blue)}"
         puts "  Rating: #{book.rating}"
-        # puts " "
         puts "---------------Description--------------"
         puts "#{book.description}"
         puts " "

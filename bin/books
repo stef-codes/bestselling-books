@@ -4,4 +4,4 @@
 # calls the require relative file
 require_relative "../lib/bestselling_books.rb"
 
- CLI.new.run 
+CLI.new.run
