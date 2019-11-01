@@ -30,7 +30,7 @@ class Scraper
         doc = Nokogiri::HTML(html)
         # doc.encoding = 'utf-8'
         book.author = doc.css("a.authorName")[0].text
-            binding.pry
+            # binding.pry
         if !doc.css("#description span")[1]
             book.description = doc.css("#description span")[0].text
         else 

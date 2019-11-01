@@ -44,7 +44,8 @@ class CLI
         # menu 
         # print_books
         # if input == exit 
-        #          puts "Hope you found a great book to share! Goodbye!"
+        puts " "
+        puts "Hope you found a great book to share! Goodbye!"
         # end  
     end
      
@@ -71,6 +72,7 @@ class CLI
         puts "Your Book Club will LOVE This Choice:"
         puts ""
         puts "#{book.name.upcase}!"
+        sleep(0.3)
         puts "  Author: #{book.author}"
         puts "  Rating: #{book.rating}"
         # puts " "
