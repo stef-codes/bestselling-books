@@ -71,9 +71,9 @@ class CLI
         puts ""
         puts "Your Book Club will LOVE This Choice:"
         puts ""
-        puts "#{book.name.upcase}!"
+        puts "#{book.name.upcase.colorize(:blue)}"
         sleep(0.3)
-        puts "  Author: #{book.author}"
+        puts "  Author: #{book.author.colorize(:blue)}"
         puts "  Rating: #{book.rating}"
         # puts " "
         puts "---------------Description--------------"
