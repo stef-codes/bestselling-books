@@ -21,7 +21,6 @@ class Scraper
             book = Book.new
             book.name = libro.css("a span").children[0].text 
             book.url = libro.css("a").attribute("href").value
-    
         end 
     end 
 

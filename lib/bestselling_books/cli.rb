@@ -53,5 +53,6 @@ class CLI
         puts "  Here's a brief description:"
         puts "  #{book.description}"
         puts "What do you think?"
+        puts "Learn more about the book here: https://www.goodreads.com#{book.url} "
     end 
 end
