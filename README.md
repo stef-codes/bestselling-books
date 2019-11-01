@@ -1,34 +1,30 @@
 # Bestselling Books
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bestselling_books`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to this Command Line Interface(CLI) Application! The application shows bestselling books that you can use for your Book Club. It's always tough choosing the right book for everyone. This application solves that problem. You will be able to choose from 100 books! 
 
-TODO: Delete this and the text above, and describe your gem
+To see these books in the application clone this Github repository to your local environment. Then, make sure you are executing the application in the directory of the newly cloned repo. Now, in this directory, you'll find the files needed to run this CLI Application. The required files and gems are in the file `lib/bestselling_books`. To see this code in action, run `bin/run` for an interactive command line application.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install the required gems for this application using the following commands:
 
 ```ruby
-gem 'bestselling_books'
+gem  install nokogiri
+gem  install pry
+gem  install colorize
 ```
 
 And then execute:
 
-    $ bundle
+    $ ruby bin/books
 
-Or install it yourself as:
-
-    $ gem install bestselling_books
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+After running the execute command above, the application will prompt you to navigate through application to: 
+1. Select a book to find more details
+2. View the list of 100 books 
+3. Exit the application 
 
 ## Contributing
 
@@ -36,8 +32,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/stef-c
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the BestsellingBooks project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/stef-codes/bestselling_books/blob/master/CODE_OF_CONDUCT.md).
+This application is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
