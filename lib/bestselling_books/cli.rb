@@ -37,9 +37,9 @@ class CLI
             puts "Menu: Type a number (1-100) to see another book, type 'list', or type 'exit'"
             input = gets.strip
 
-            if input == exit 
-                puts "Hope you found a great book to share! Goodbye!"
-            end
+            # if input == "exit" 
+            #     puts "Hope you found a great book to share! Goodbye!"
+            # end
          end    
         # menu 
         # print_books
