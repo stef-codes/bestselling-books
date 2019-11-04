@@ -12,7 +12,7 @@ class CLI
         puts " "
         puts "What a great list!"
         puts " "
-#loop that asks user what to do and does it over until exit 
+    #loop that asks user what to do and does it over until exit 
         puts "---------------Menu--------------"
         puts "1. Select a number (1-100) to see more details about the books for your Book Club" 
         puts "2. Type 'list' to view all of the books again"
@@ -37,15 +37,9 @@ class CLI
         puts " "
         puts "Hope you found a great book to share! Goodbye!"
     end
-      
-
-    def print_top_books    
-        Book.all[0,10].each_with_index do |book, index| 
-            puts "#{index+ 1}. #{book.name}" 
-            sleep(0.15)
-        end
-    end  
-
+    
+    
+#first level 
     def print_books     
         Book.all.each_with_index do |book, index| 
             puts "#{index+ 1}. #{book.name}" 
@@ -53,17 +47,18 @@ class CLI
         end
     end
     
+#second level details
     def print_book_details(book)
-        puts ""
+        puts " "
         puts "Your Book Club will LOVE This Choice:"
-        puts ""
+        puts " "
         puts "#{book.name.upcase.colorize(:blue)}"
         sleep(0.3)
         puts "  Author: #{book.author.colorize(:blue)}"
         puts "  Rating: #{book.rating}"
         puts "---------------Description--------------"
-        puts "#{book.description}"
         puts " "
+        puts "#{book.description}"
         puts "Learn more about the book here: https://www.goodreads.com#{book.url} "
         puts " "
     end 
